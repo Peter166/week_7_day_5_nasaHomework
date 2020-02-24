@@ -8,7 +8,7 @@
 </template>
 
 <script>
-
+window.axios = require('axios');
 import { eventBus } from './main.js'
 import NasaImage from './components/nasaImage.vue';
 import MarsPictures from './components/marsPictures.vue'
@@ -42,9 +42,11 @@ export default {
 
       let a1 = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date='
       let a2 = '&api_key=hViuHXWgDjFeURpIha7F9YYMmRcyq8fU81bSJUZF'
-      let link = (a1 + this.marsDate)
+      let link = (a1 + this.marsDate+ a2)
 
-      fetch(link, options)
+      axios.get(link)
+      .then(res => this.marsPictures = res.data.photos);
+
       // const getData= () =>{
       //   axios.get(link).then(res => {
       //     console.log(res);
@@ -56,8 +58,9 @@ export default {
       //   'Authorization': ['hViuHXWgDjFeURpIha7F9YYMmRcyq8fU81bSJUZF']
       //   'Content-Type': 'application/json'
       //     })
-      .then(res => res.json())
-      .then(data => this.marsPictures = data)
+      // .then(res => res.json())
+      // .then(data => this.marsPictures = data)
+      // console.log(link)
       // }
     })
 

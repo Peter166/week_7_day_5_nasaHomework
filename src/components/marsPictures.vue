@@ -1,12 +1,13 @@
 <template lang="html">
-  <div class="main">
+  <div >
     <label>
+      <h2>Pictures from mars by the day: please pick the date below</h2>
       <input
       <input v-on:change="handleClick" type="date"  v-model="datee">
       <!-- <button type="submit" :value="date">Find</button> -->
-
+      <br>
     </label>
-    <img v-if="marsPictures" v-for="(photo, index) in marsPictures" height="800":src="photo.img_src" :key="index">
+    <img class="main" v-if="marsPictures" v-for="(photo, index) in marsPictures" height="400":src="photo.img_src" :key="index">
   </div>
 </template>
 
@@ -33,10 +34,14 @@ export default {
       let splitDate = this.datee.split('-')
       const first = splitDate[0]
       this.array.push(first)
+      splitDate.splice(0, 1)
       for (let part of splitDate){
         if (part.charAt(0) == '0'){
           const newPart = part.slice(1)
           this.array.push(newPart)
+        }else{
+          this.array.push(part)
+          console.log(this.array);
         }
 
       }
@@ -44,9 +49,9 @@ export default {
     },
     changeFormat2(){
       let a1 = this.array[0]
-      let a2 = this.array[1]
-      let a3 = this.array[2]
-        this.newDate = `${a1}-${a3}-${a2}`
+      let a2 = this.array[2]
+      let a3 = this.array[1]
+      this.newDate = `${a1}-${a3}-${a2}`
     },
 
     handleClick(){
@@ -70,6 +75,6 @@ export default {
 
 <style lang="css" scoped>
 .main{
-
+  display: inline;
 }
 </style>

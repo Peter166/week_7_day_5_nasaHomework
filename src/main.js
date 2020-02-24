@@ -3,6 +3,7 @@ import App from './App.vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
+window.axios = require('axios');
 Vue.use(VueAxios, axios)
 
 export const eventBus = new Vue();

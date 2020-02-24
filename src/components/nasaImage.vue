@@ -8,7 +8,7 @@
 
   <iframe width="800" height="600"
   :src="nasaImage.url">
-  </iframe>
+  </iframe> 
     <h4>{{nasaImage.explanation}}</h4>
   </div>
 
