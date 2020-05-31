@@ -1,6 +1,5 @@
 <template class="main" lang="html">
-  <div class="">
-    <h1>NASA IMAGE OF THE DAY</h1>
+  <div id="main">
     <mars-images :marsPictures="marsPictures"/>
     <nasa-image :nasaImage='nasaImage'/>
 
@@ -11,7 +10,8 @@
 window.axios = require('axios');
 import { eventBus } from './main.js'
 import NasaImage from './components/nasaImage.vue';
-import MarsPictures from './components/marsPictures.vue'
+import MarsPictures from './components/marsPictures.vue';
+
 
 export default {
   name: 'app',
@@ -47,21 +47,6 @@ export default {
       axios.get(link)
       .then(res => this.marsPictures = res.data.photos);
 
-      // const getData= () =>{
-      //   axios.get(link).then(res => {
-      //     console.log(res);
-      //
-      // const options = (
-      // method: 'get',
-      // headers: new Headers({
-      //   'Access-Control-Allow-Origin': '*',
-      //   'Authorization': ['hViuHXWgDjFeURpIha7F9YYMmRcyq8fU81bSJUZF']
-      //   'Content-Type': 'application/json'
-      //     })
-      // .then(res => res.json())
-      // .then(data => this.marsPictures = data)
-      // console.log(link)
-      // }
     })
 
 

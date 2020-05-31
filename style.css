@@ -1,0 +1,39 @@
+
+body{
+  background-color: lightgrey;
+}
+#main{
+  margin-top: 100px
+}
+
+#date{
+  padding: 15px;
+  position: fixed;
+  top: 5%;
+  left:80%;
+  background-image: url("./mars.png");
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  box-shadow: 5px 5px 8px 5px #c06a2b;
+}
+#nasa-picture {
+  box-shadow: 5px 10px 10px;
+  margin: 10px;
+  position:  static;
+}
+
+#nasa-picture:hover{
+  height:500px;
+  position: fixed; /* or absolute */
+  top: 10%;
+  left: 20%;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px 200px grey inset;
+}
+
+#pick-date{
+  text-align: center;
+}

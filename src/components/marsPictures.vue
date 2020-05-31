@@ -1,18 +1,19 @@
 <template lang="html">
   <div >
-    <label>
-      <h2>Pictures from mars by the day: please pick the date below</h2>
+    <label id="pick-date">
+      <h2 id="pick-date">Pictures from mars by date: please pick the day above</h2>
       <input
-      <input v-on:change="handleClick" type="date"  v-model="datee">
-      <!-- <button type="submit" :value="date">Find</button> -->
+      <input v-on:change="handleClick" id="date" type="date"  v-model="datee">
+
       <br>
     </label>
-    <img class="main" v-if="marsPictures" v-for="(photo, index) in marsPictures" height="400":src="photo.img_src" :key="index">
+    <img height="300" class="main" v-if="marsPictures" v-for="(photo, index) in marsPictures" :src="photo.img_src" id="nasa-picture" :key="index">
   </div>
 </template>
 
 <script>
 import { eventBus} from '../main.js'
+import '../../style.css'
 
 export default {
   name: 'mars-images',
@@ -31,17 +32,24 @@ export default {
 
   methods: {
     changeFormat(){
+      // split string (html-imput-date) into three parts
       let splitDate = this.datee.split('-')
+      // first string (index 0), will be pushed to new array
       const first = splitDate[0]
       this.array.push(first)
+      //now we need to delete it of our array.
       splitDate.splice(0, 1)
+
+    // rest of parts of string need to be looped over each.
       for (let part of splitDate){
+        // check if this string starts with 0 if yes then delete it
         if (part.charAt(0) == '0'){
           const newPart = part.slice(1)
+          //then push it to new array
           this.array.push(newPart)
         }else{
+          //if does nto start with 0 then just push it to array
           this.array.push(part)
-          console.log(this.array);
         }
 
       }
@@ -76,5 +84,8 @@ export default {
 <style lang="css" scoped>
 .main{
   display: inline;
+}
+img{
+  background-image: radial-gradient(black);
 }
 </style>
