@@ -4,8 +4,13 @@
 
 ![](images/1.png)
 
+## Lets pick 16th of April 2020
+![](images/3.png)
 
 
+## If we hover over the picture it will display it in the middle of the screen.
+![](images/4.png)
+![](images/5.png)
 
 ## Project setup
 ```
