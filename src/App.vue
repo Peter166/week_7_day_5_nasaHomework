@@ -2,7 +2,6 @@
   <div id="main">
     <mars-images :marsPictures="marsPictures"/>
     <nasa-image :nasaImage='nasaImage'/>
-
   </div>
 </template>
 
@@ -11,6 +10,7 @@ window.axios = require('axios');
 import { eventBus } from './main.js'
 import NasaImage from './components/nasaImage.vue';
 import MarsPictures from './components/marsPictures.vue';
+import "../style.css"
 
 
 export default {

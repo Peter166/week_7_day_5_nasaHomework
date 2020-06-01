@@ -1,25 +1,62 @@
 
 body{
-  background-color: lightgrey;
+  color:white;
+  background: url("./ma.png");
+  /* backbround-color: lightgrey; */
+  background-repeat: repeat;
+  background-attachment: fixed;
+
+}
+h4{
+  color:black
+}
+#nasaimage{
+  display: flex;
+
+}
+#nasaimage-left{
+  margin-left: 50px;
+}
+#nasaimage-right{
+margin-left: 50px;
+text-align: center;
+margin-top:100px
+}
+#bottom-half{
+    /* backbround-image: url("./ma1.jpg"); */
+    background-color: black;
+    position: absolute;
+    top:50%;
 }
 #main{
   margin-top: 100px
 }
-
-#date{
-  padding: 15px;
+#date-div{
   position: fixed;
-  top: 5%;
-  left:80%;
+  top: 0%;
+  left: 0%;
+  width:2000px;
   background-image: url("./mars.png");
+  background-size: 2000px;
+  background-repeat: no-repeat;
+  box-shadow: 5px 10px 10px 10px black;
+  padding:10px
+}
+#date{
+  margin: 0px;
+  padding: 15px;
+  left:80%;
+  width: 185px;
+  background-image: url("./sattelite.png");
   color: white;
   font-weight: bold;
   font-size: 15px;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  box-shadow: 5px 5px 8px 5px #c06a2b;
+  /* box-shadow: 5px 5px 8px 5px #c06a2b; */
 }
+
 #nasa-picture {
-  box-shadow: 5px 10px 10px;
+  box-shadow: 0 2px 6px 2px white;
   margin: 10px;
   position:  static;
 }
@@ -27,8 +64,8 @@ body{
 #nasa-picture:hover{
   height:500px;
   position: fixed; /* or absolute */
-  top: 10%;
-  left: 20%;
+  top: 5%;
+  left: 10%;
   border: 1px solid;
   padding: 10px;
   box-shadow: 5px 10px 200px grey inset;
@@ -36,4 +73,9 @@ body{
 
 #pick-date{
   text-align: center;
+
+}
+#pick-date-sign{
+  text-align: right;
+  text-shadow: 10px 10px 20px white;
 }

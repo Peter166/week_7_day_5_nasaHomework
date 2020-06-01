@@ -1,10 +1,10 @@
 <template lang="html">
   <div >
     <label id="pick-date">
-      <h2 id="pick-date">Pictures from mars by date: please pick the day above</h2>
-      <input
+      <h2 id="pick-date-sign">Pictures from mars by date: please pick the day above</h2>
+      <div id="date-div">
       <input v-on:change="handleClick" id="date" type="date"  v-model="datee">
-
+      </div>
       <br>
     </label>
     <img height="300" class="main" v-if="marsPictures" v-for="(photo, index) in marsPictures" :src="photo.img_src" id="nasa-picture" :key="index">
